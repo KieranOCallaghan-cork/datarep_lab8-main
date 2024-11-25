@@ -12,16 +12,22 @@ const Read = () => {
       .then((response) => {
         console.log(response.data);
         setMovies(response.data);
+        props.Reload();
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+    });
+
+
+      LoadData();
+ 
+
 
   return (
     <div>
       <h3>Hello from read component!</h3>
-      <Movies myMovies={movies} />
+      <Movies myMovies={movies} ReloadData={LoadData} />
     </div>
   );
 }
