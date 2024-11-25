@@ -8,7 +8,7 @@ const MovieItem = (props)=> {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    axios.delete('http://localhost:4000/api/movie/' + props.myMovie._id)
+    axios.delete('http://localhost:4000/api/movie/' + props.mymovie._id)
         .then(() => {
             props.Reload(); // Refresh the movie list after deletion
         })

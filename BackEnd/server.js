@@ -57,6 +57,15 @@ app.get('/api/movie/:id', async (req, res) => {
   res.send(movie); // Send the movie as a response
 });
 
+app.delete('/api/movie/:id', async (req, res) => {
+  
+  console.log('Deleting movie with ID:', req.params.id);
+  const movie = await movieModel.findByIdAndDelete(req.params.id);
+  res.status(200).send({ message: "Movie deleted successfully", movie });
+  
+});
+
+
 // Handle PUT requests to update a movie by its ID
 app.put('/api/movie/:id', async (req, res) => {
   let movie = await movieModel.findByIdAndUpdate(req.params.id, req.body, { new: true }); // Update the movie and return the updated document
