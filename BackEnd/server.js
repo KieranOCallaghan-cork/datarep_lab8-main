@@ -23,7 +23,7 @@ app.use(bodyParser.json()); // Parse JSON payloads
 // Import mongoose to interact with MongoDB
 const mongoose = require('mongoose');
 // Connect to MongoDB Atlas using mongoose
-mongoose.connect('mongodb+srv://admin:admin@kierans.hfgz6.mongodb.net/');
+mongoose.connect('mongodb+srv://admin:admin@kieranscluster.zfxym.mongodb.net/');
 
 // Define a schema for movies
 const movieSchema = new mongoose.Schema({
